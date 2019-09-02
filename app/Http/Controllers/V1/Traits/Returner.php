@@ -26,7 +26,7 @@ class Returner
         $message AND $result['message']  =   $message;
         $data AND $result['data'] =   $data;
 
-        $this->stateReturn($data, $code);
+        return $this->stateReturn($result, $code);
     }
 
     /**
@@ -46,7 +46,7 @@ class Returner
         $data AND $result['data'] =   $data;
         $errorCode AND $result['error_code'] = $errorCode;
 
-        $this->stateReturn($data, $code);
+        return $this->stateReturn($result, $code);
     }
 
     /**
