@@ -1,0 +1,20 @@
+{
+  "name": "Guide Project Developers Document",
+  "version": "1.0.0",
+  "description": "",
+  "title": "Guide API Document",
+  "url": "http://guide.saeed.pw",
+  "sampleUrl": "http://guide.saeed.pw",
+  "header": {
+    "title": "Introduction",
+    "filename": "header.md"
+  },
+  "footer": {
+    "title": "The End",
+    "filename": "footer.md"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
