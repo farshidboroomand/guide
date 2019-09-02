@@ -22,6 +22,21 @@ class AuthenticationController extends Controller
         $this->returner = $returner;
     }
 
+    /**
+     * @api {post} api/auth/register Register User
+     * @apiName Register User
+     * @apiGroup Authentication
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} email     User Email.
+     * @apiParam {String} password  User Password.
+     * @apiParam {String} name      User Name.
+     *
+     * @apiSuccess {String} message     Message of successfully created user.
+     * @apiSuccess {Integer} user_id    User ID.
+     * @apiSuccess {String} name        User Name.
+     * @apiSuccess {String} token       User Token.
+     */
     public function register(DoRegister $user)
     {
 
