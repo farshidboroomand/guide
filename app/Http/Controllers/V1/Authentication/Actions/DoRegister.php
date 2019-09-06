@@ -10,10 +10,9 @@ namespace App\Http\Controllers\V1\Authentication\Actions;
 
 use App\Http\Controllers\V1\Actions\BaseAction;
 use App\Http\Controllers\V1\Traits\RandomStringGenerator;
-use App\Mail\AccountActivation;
+use App\Jobs\SendActivationEmails;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class DoRegister extends BaseAction
 {
@@ -51,7 +50,7 @@ class DoRegister extends BaseAction
         if($user->save()) {
             $token = $user->createToken('Guide')->accessToken;
 
-            $this->sendActivationEmail($user);
+            dispatch(new SendActivationEmails($user));
 
             return [
                 'user_id'   => $user->id,
@@ -80,10 +79,5 @@ class DoRegister extends BaseAction
             $this->checkGeneratedCode($code);
         }
         return $code;
-    }
-
-    private function sendActivationEmail($user)
-    {
-        Mail::to($user->email)->send(new AccountActivation($user));
     }
 }
