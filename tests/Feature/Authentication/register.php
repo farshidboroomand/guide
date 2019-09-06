@@ -1,10 +1,8 @@
 <?php
 
-namespace Tests\Feature\Athentication;
+namespace Tests\Feature\Authentication;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class register extends TestCase
 {
