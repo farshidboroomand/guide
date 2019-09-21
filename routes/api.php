@@ -24,6 +24,6 @@ Route::group([
     'expires'    => 1
 ], function () {
     Route::post('register', 'AuthenticationController@register');
-    Route::get('verification/{verify_code}', 'AuthenticationController@verfification')
+    Route::get('verification/{verify_code}', 'AuthenticationController@verification')
         ->name('account.verification');
 });
